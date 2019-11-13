@@ -1,0 +1,27 @@
+<div class="container">
+<h2>~ Restaurants ~</h2>
+<br>
+<a  class="btn btn-info" [routerLink]="['/new']"> Add new restaurant </a>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Restaurant</th>
+      <th scope="col">Cuisine</th>
+      <th scope="col">Actions Available</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let rest of rests">
+    <tr>
+      <td>{{ rest.name }}</td>
+      <td>{{ rest.cuisine }}</td>
+      <td>
+        <a class="btn btn-primary"  [routerLink]="['/show/' + rest._id]" >Read reviews</a>
+        <a class="btn btn-success"  [routerLink]="['/edit/' + rest._id]" >Update</a>
+        <a class="btn btn-danger"  (click)="deleteRest(rest._id)" >Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+

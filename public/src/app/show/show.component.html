@@ -1,0 +1,24 @@
+<div class="container">
+    <!-- <h1> {{ rest.cuisine }} </h1> -->
+    <h2>~ Reviews for {{ rest.name }} ~</h2>
+<br>
+<a  class="btn btn-info" [routerLink]="['/newReview/'+ rest._id]"> New Review </a>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Customer</th>
+      <th scope="col">Stars</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let review of rest.reviews">
+    <tr >
+      <td >{{review.name }}</td>
+      <td>{{ review.star }}</td>
+      <td>{{ review.description }}</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>

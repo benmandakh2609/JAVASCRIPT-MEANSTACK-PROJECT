@@ -1,0 +1,11 @@
+<div class="container">
+        <h2> ~ Register new restaurant ~ </h2>
+        {{ rest | json }}
+        <form (submit)="createRest()">
+            <p style="color: red"> {{ err.name }} </p>
+            <input type="test" class="form-control col-6 mb-2" name="rest.name" [(ngModel)]="rest.name"  placeholder ="Restaurant Name">
+            <p style="color: red"> {{ err.cuisine }} </p>
+            <input type="test" class="form-control col-6 mb-2" name="rest.cuisine" [(ngModel)]="rest.cuisine"  placeholder ="Cuisine">
+            <a [routerLink]="['/home/']" class="btn btn-secondary"> Cancel</a> <input style="margin-left: 10px"  type="submit" class="btn btn-primary" value="Create new">
+        </form>
+    </div>

@@ -1,0 +1,20 @@
+<div class="container">
+        <h2> ~ Write review ~ </h2>
+        {{ review | json }}
+        <form (submit)="createReview()">
+            <p style="color: red"> {{ err.name }} </p>
+            <input type="text" class="form-control col-6 mb-2" name="review.name" [(ngModel)]="review.name"  placeholder ="Name">
+            <!-- <input type="text" class="form-control col-6 mb-2" name="review.star" [(ngModel)]="review.star"  placeholder ="Stars"> -->
+            <select class="form-control col-6 mb-2"  name="review.star" [(ngModel)]="review.star">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+            <p style="color: red"> {{ err.description }} </p>
+            <input type="text" class="form-control col-6 mb-2" name="review.description" [(ngModel)]="review.description"  placeholder ="Your review">
+            <a [routerLink]="['/home/']" class="btn btn-secondary"> Cancel</a> <input style="margin-left: 10px"  type="submit" class="btn btn-primary" value="Submit">
+        </form>
+    </div>
+
